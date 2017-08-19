@@ -14,13 +14,13 @@ public class Turma {
 		this.codigo = codigo;
 		this.professor = professor;
 		this.disciplina = disciplina;
-		this.alunos = alunos;
+		this.alunos = new  ArrayList<Aluno>();
 	}
 
-	//public void adcionarAluno (Aluno aluno){
-		//this.alunos.add(aluno);
+	public void adicionarAluno (Aluno aluno){
+		this.alunos.add(aluno);
 		
-	//}
+	}
 
 	//--------------------------------------------------------------------
 	
@@ -50,7 +50,7 @@ public class Turma {
 	this.disciplina = disciplina;
 	}
 	
-	public  ArrayList<Aluno> getAlunos(Aluno a1, Aluno a2){
+	public  ArrayList<Aluno> getAlunos(){
 		return alunos;
 	}
 	
@@ -60,7 +60,29 @@ public class Turma {
 	}
 	//-----------------------------------------------------------------
 
-
+	
+	
+	       public String listarAlunos(){
+	    	   String retorno = "";
+	    	   
+	    	   // verificar se existem alunos na turma
+	    	   
+	    	   if (this.alunos.size() == 0) {
+	    		   retorno = "Nenhum Aluno Resgiatrado na turma";
+			}
+	    	   else{
+	    	      	   // navegar pela estrutura de alunos
+	    	   for (int i = 0; i < this.alunos.size(); i++) {
+	    		   retorno = retorno + "Nome: " + this.alunos.get(i).getNome() + "\n";
+	    	   
+	    		   
+				
+			}
+			return retorno;
+	       }
+			return retorno;
+	       
+	       }
 
 	
 		
